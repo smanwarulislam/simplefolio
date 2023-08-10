@@ -69,12 +69,12 @@ After that, you can install the dependencies either using NPM or Yarn.
 Using NPM: Simply run the below commands.
 
 ```bash
-# 2022 Update - Fix Dependencies
-$ npm audit fix
-$ npm i @parcel/transformer-sass
-
 # Install dependencies
 $ npm install
+
+# 2023 Update - Fix Dependencies
+$ npm audit fix
+$ npm i @parcel/transformer-sass
 
 # Start the development server
 $ npm start
@@ -97,6 +97,33 @@ If your run into issues installing the dependencies with NPM, use this below com
 # Install dependencies with all permissions
 $ sudo npm install --unsafe-perm=true --allow-root
 ```
+
+If you install the package but you still get the error, then follow the steps below (If all else fails, you can try the following):
+
+```bash
+# delete the node_modules folder by running
+$ rm -rf node_modules
+
+# delete the package.lock.json file by running
+$ rm -f package-lock.json
+
+# clean up the NPM cache by running
+$ npm cache clean --force
+
+# install all packages again by running
+$ npm install
+
+# 2023 Update - Fix Dependencies
+$ npm audit fix
+$ npm i @parcel/transformer-sass
+
+# Start the development server
+$ npm start
+```
+
+That should fix the error for you.
+
+If you still have an error, you can try to reinstall Node.js and npm to make sure that you have the latest versions and that any corrupted files are replaced.
 
 Once your server has started, go to this url `http://localhost:1234/` to see the portfolio locally. It should look like the below screenshot.
 
@@ -313,12 +340,12 @@ Go to `/src/index.html` and put your information, there are 5 sections:
 
 Change the color theme of the website - (choose 2 colors to create a gradient)
 
-Go to `/src/sass/abstracts/_variables.scss` and only change the values for this variables `$main-color` and `$secondary-color` with your prefered HEX color.
+Go to `/src/sass/abstracts/_variables.scss` and only change the values for this variables `$primary-color` and `$secondary-color` with your prefered HEX color.
 If you want to get some gradients inspiration I highly recommend you to check this website [UI Gradient](https://uigradients.com/#BrightVault)
 
 ```scss
 // Default values
-$main-color: #02aab0;
+$primary-color: #02aab0;
 $secondary-color: #00cdac;
 ```
 
@@ -346,6 +373,7 @@ I highly recommend to use [Netlify](https://netlify.com) because it is super eas
 ## Authors
 
 - **Jacobo Martinez** - [https://github.com/cobiwave](https://github.com/cobiwave)
+- **S. M. Anwarul Islam (Raju)** - [https://github.com/smanwarulislam](https://github.com/smanwarulislam)
 
 ## Status
 
